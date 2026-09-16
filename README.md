@@ -23,6 +23,7 @@
 | `SKILL.md` | skill 说明与使用手册(触发词: 115/百度/迅雷/CD2/转存/离线下载...) |
 | `clouddrive.proto` | 官方 proto v1.0.17 |
 | `gen/proto/` | 生成的 Python gRPC 客户端代码 |
+| `docs/` | **官方开发者文档快照**(中文版,随每次官方更新自动同步),报错时可作说明书查阅 |
 
 ## 快速开始
 
@@ -57,5 +58,9 @@ python3 cd2cmd.py stat
 - 冲突策略: `conflictPolicy=Overwrite|Rename|Skip`
 - 流式方法(GetSubFiles/GetSearchResults 等)自动聚合
 - 字段用 camelCase,值按 JSON 解析,逗号分隔自动成数组
+
+## 自动同步机制
+
+作者会定期更新官方文档([gRPC API 指南](https://www.clouddrive2.com/api/CloudDrive2_gRPC_API_Guide.html))。本仓库通过每周自动任务检测官方 Markdown/`clouddrive.proto` 变更,有更新时自动重新生成 gRPC 客户端并同步三处:本机 skill 工作副本、已安装副本、本 GitHub 仓库,变更摘要会写入 `docs/` 旁边的版本新特性记录。官方文档快照始终保留在 `docs/`,便于离线查错。
 
 详情见 `SKILL.md`。
