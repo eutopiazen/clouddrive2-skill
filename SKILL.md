@@ -13,7 +13,7 @@ metadata:
 
 - 服务常驻运行,无需启动
 - 认证自动:优先 `CD2_TOKEN`/`CLOUDDRIVEAPI` 环境变量 → 本机 `/opt/clouddrive2/config/api_tokens.json` 里的 API token → `GET token.txt`。一般直接可用。
-- 工具目录: `本 skill 目录(包含 gen/ 子目录)`
+- 工具目录: `/root/.openclaw/workspace/skills/clouddrive2/`
   - `cd2.py` — 通用调用器,支持**全部 227 个 RPC**
   - `cd2cmd.py` — 常用命令便捷封装
   - `gen/proto/` — 生成的 Python gRPC 客户端(勿动)
@@ -24,7 +24,7 @@ metadata:
 ### A. 快捷命令(cd2cmd.py,高频操作首选)
 
 ```bash
-cd <skill目录>
+cd /root/.openclaw/workspace/skills/clouddrive2
 python3 cd2cmd.py ls /115open            # 列目录: 名称<TAB>大小<TAB>类型
 python3 cd2cmd.py ls / --refresh         # 强制刷新缓存
 python3 cd2cmd.py find /115open 电影     # 模糊搜索
