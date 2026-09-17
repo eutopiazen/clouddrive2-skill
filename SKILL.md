@@ -18,6 +18,14 @@ metadata:
   - `cd2cmd.py` — 常用命令便捷封装
   - `gen/proto/` — 生成的 Python gRPC 客户端(勿动)
   - `clouddrive.proto` — 最新 proto 定义(1.0.17)
+  - `docs/` — 官方 gRPC 文档快照(报错时的说明书)
+
+## 官方文档说明书
+
+- 本地快照: `docs/CloudDrive2_gRPC_API_Guide_zh-CN.md`(随官方更新自动同步)
+- 报错/查字段时优先查它: 方法名、请求/响应字段、枚举值、常见错误说明都在里面
+- 在线版: https://www.clouddrive2.com/api/CloudDrive2_gRPC_API_Guide.html
+- **自动更新**: 每周一自动检测官方文档/proto 变更,有更新时自动重新生成客户端并同步三处(本工作副本、`~/.agents/skills/clouddrive2`、GitHub `eutopiazen/clouddrive2-skill`),变更摘要写入 `scripts/cd2doc-watch/changes/`
 
 ## 用法
 
